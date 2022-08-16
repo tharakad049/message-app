@@ -73,12 +73,11 @@ public class LoginAndRegFormController {
         txtUsername.setText("");
         txtPassword.setText("");
     }
-
     private void changeWindow() {
         try {
             Stage stage = (Stage) txtUsername.getScene().getWindow();
             URL resource = this.getClass().
-                    getResource("ChatRoomBox.fxml");
+                    getResource("views/ChatRoomBox.fxml");
             Parent load = FXMLLoader.load(resource);
             Scene scene= new Scene(load);
 

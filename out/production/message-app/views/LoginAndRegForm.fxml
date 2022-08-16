@@ -95,7 +95,7 @@
                         <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="success" layoutX="185.0" layoutY="623.0" opacity="0.0" prefHeight="27.0" prefWidth="260.0" text="Registration Successful" textFill="#f2009d">
+                  <Label fx:id="success" layoutX="181.0" layoutY="616.0" opacity="0.0" prefHeight="27.0" prefWidth="333.0" text="Registration Successful" textFill="#f2009d">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -172,7 +172,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </CheckBox>
-                  <Button layoutX="395.0" layoutY="370.0" mnemonicParsing="false" onAction="#forgetPassword" prefHeight="40.0" prefWidth="166.0" styleClass="btnLogin" text="Forget Password ? ">
+                  <Button layoutX="395.0" layoutY="370.0" mnemonicParsing="false" onAction="#forgetPassword" prefHeight="40.0" prefWidth="166.0" text="Forget Password ? ">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

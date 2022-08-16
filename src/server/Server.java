@@ -12,7 +12,7 @@ public class Server {
         ServerSocket serverSocket;
         Socket socket;
         try {
-            serverSocket = new ServerSocket(8000);
+            serverSocket = new ServerSocket(5003);
             while(true) {
                 System.out.println("Waiting for clients...");
                 socket = serverSocket.accept();
