@@ -29,7 +29,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
 
     public void connectSocket() {
         try {
-            socket = new Socket("localhost", 5000);
+            socket = new Socket("localhost", 8003);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -72,7 +72,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
     public void send() {
         String msg = msgField.getText();
         writer.println(LoginAndRegFormController.username + ": " + msg);
-        msgRoom.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+        msgRoom.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
         msgRoom.appendText("Me: " + msg + "\n");
         msgField.setText("");
         if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
