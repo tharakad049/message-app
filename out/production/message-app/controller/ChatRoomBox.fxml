@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="647.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomBoxController">
+   <children>
+      <Pane prefHeight="653.0" prefWidth="330.0" style="-fx-background-color: #37bf11;">
+         <children>
+            <Label fx:id="clientName" alignment="CENTER" layoutX="83.0" layoutY="33.0" prefHeight="48.0" prefWidth="181.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="68.0" fitWidth="81.0" layoutX="41.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image/icons8-male-user-96.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="chat" layoutX="335.0" layoutY="14.0" prefHeight="627.0" prefWidth="506.0" style="-fx-background-color: white;">
+         <children>
+            <TextArea fx:id="msgRoom" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="533.0" prefWidth="480.0" />
+            <Pane layoutX="14.0" layoutY="552.0" prefHeight="68.0" prefWidth="480.0" style="-fx-background-color: #114ebf;">
+               <children>
+                  <TextField fx:id="msgField" layoutX="7.0" layoutY="10.0" onKeyPressed="#sendMessageByKey" prefHeight="48.0" prefWidth="308.0" promptText="Type a message" style="-fx-background-radius: 90;" />
+                  <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="432.0" layoutY="17.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/logo/icons8-email-send-32.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="332.0" layoutY="17.0" onMousePressed="#selectImage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/logo/icons8-camera-48.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="385.0" layoutY="17.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/logo/icons8-emoji-66.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

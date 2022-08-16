@@ -29,7 +29,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
 
     public void connectSocket() {
         try {
-            socket = new Socket("localhost", 5003);
+            socket = new Socket("localhost", 5000);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -38,6 +38,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
             e.printStackTrace();
         }
     }
+
     @Override
     public void run() {
         try {
@@ -65,10 +66,17 @@ public class ChatRoomBoxController extends Thread implements Initializable {
             e.printStackTrace();
         }
     }
+    public void selectImage(MouseEvent mouseEvent) {
+    }
 
-    public void sendMessageByKey(KeyEvent keyEvent) {
-        if (keyEvent.getCode().toString().equals("ENTER")) {
-            send();
+    public void send() {
+        String msg = msgField.getText();
+        writer.println(LoginAndRegFormController.username + ": " + msg);
+        msgRoom.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+        msgRoom.appendText("Me: " + msg + "\n");
+        msgField.setText("");
+        if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
+            System.exit(0);
         }
     }
 
@@ -79,23 +87,15 @@ public class ChatRoomBoxController extends Thread implements Initializable {
         }
     }
 
-    public void selectImage(MouseEvent mouseEvent) {
+    public void sendMessageByKey(KeyEvent keyEvent) {
+        if (keyEvent.getCode().toString().equals("ENTER")) {
+            send();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         clientName.setText(LoginAndRegFormController.username);
         connectSocket();
-    }
-
-    public void send() {
-        String msg = msgField.getText();
-        writer.println(LoginAndRegFormController.username + ": " + msg);
-        msgRoom.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-        msgRoom.appendText("Me: " + msg + "\n");
-        msgField.setText("");
-        if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
-            System.exit(0);
-        }
     }
 }

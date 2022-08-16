@@ -77,7 +77,7 @@ public class LoginAndRegFormController {
         try {
             Stage stage = (Stage) txtUsername.getScene().getWindow();
             URL resource = this.getClass().
-                    getResource("views/ChatRoomBox.fxml");
+                    getResource("ChatRoomBox.fxml");
             Parent load = FXMLLoader.load(resource);
             Scene scene= new Scene(load);
 
