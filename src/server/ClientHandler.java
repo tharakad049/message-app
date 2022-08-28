@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ClientHandler extends Thread{
@@ -27,10 +29,15 @@ public class ClientHandler extends Thread{
     @Override
     public void run() {
         try {
+            Connection conn = null;
             String msg;
             while ((msg = reader.readLine()) != null) {
-                if (msg.equalsIgnoreCase( "bye")) {
-                    break;
+                    if (conn != null) {
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+
+                    }
                 }
                 for (ClientHandler cl : clients) {
                     cl.writer.println(msg);
