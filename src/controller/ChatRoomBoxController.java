@@ -80,6 +80,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
         }
     }
 
+
     public void handleSendEvent(MouseEvent mouseEvent) {
         send();
         for(User user : LoginAndRegFormController.users) {
@@ -92,6 +93,7 @@ public class ChatRoomBoxController extends Thread implements Initializable {
             send();
         }
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -113,7 +113,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pnSignIn" prefHeight="793.0" prefWidth="620.0" style="-fx-background-color: white;" visible="false">
+            <Pane fx:id="pnSignIn" prefHeight="793.0" prefWidth="620.0" style="-fx-background-color: white;">
                <children>
                   <Label fx:id="loginNotifier" layoutX="163.0" layoutY="376.0" opacity="0.0" text="Username or password is incorrect" textFill="#ff5353">
                      <font>
