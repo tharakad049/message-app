@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="emoji">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/jfoenix-8.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/mysql-connector-java-5.1.49.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/lib/emoji" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/lib/emoji" recursive="false" />
+  </library>
+</component>

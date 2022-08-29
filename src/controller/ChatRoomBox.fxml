@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="647.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomBoxController">
    <children>
-      <Pane prefHeight="653.0" prefWidth="330.0" style="-fx-background-color: #FEA47F;">
+      <Pane prefHeight="653.0" prefWidth="330.0" style="-fx-background-color: #36c54e; -fx-background-insets: 8px;">
          <children>
-            <Label fx:id="clientName" alignment="CENTER" layoutX="83.0" layoutY="33.0" prefHeight="48.0" prefWidth="181.0" text="Username" textFill="WHITE">
+            <Circle fill="WHITE" layoutX="165.0" layoutY="220.0" radius="44.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="clientName" alignment="CENTER" layoutX="75.0" layoutY="264.0" prefHeight="48.0" prefWidth="181.0" text="Username" textFill="#bf0101">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
             </Label>
-            <ImageView fitHeight="68.0" fitWidth="81.0" layoutX="41.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="94.0" fitWidth="88.0" layoutX="121.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/image/icons8-male-user-96.png" />
                </image>
             </ImageView>
+            <Label layoutX="44.0" layoutY="29.0" text="Play Tech Pvt Ltd" textFill="#000786">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="591.0" text="2022 All Right Reserved">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="618.0" text="version 1.0.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Pane fx:id="chat" layoutX="335.0" layoutY="14.0" prefHeight="627.0" prefWidth="506.0" style="-fx-background-color: white;">
+      <Pane fx:id="chat" layoutX="320.0" layoutY="3.0" prefHeight="647.0" prefWidth="524.0" style="-fx-background-color: #787c03; -fx-background-insets: 8px;">
          <children>
-            <TextArea fx:id="msgRoom" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="533.0" prefWidth="480.0" />
-            <Pane layoutX="14.0" layoutY="552.0" prefHeight="68.0" prefWidth="480.0" style="-fx-background-color: #3B3B98;">
+            <Pane layoutX="16.0" layoutY="558.0" prefHeight="68.0" prefWidth="487.0" style="-fx-background-color: #3B3B98;">
                <children>
                   <TextField fx:id="msgField" layoutX="7.0" layoutY="10.0" onKeyPressed="#sendMessageByKey" prefHeight="48.0" prefWidth="308.0" promptText="Type a message" style="-fx-background-radius: 90;" />
                   <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="432.0" layoutY="17.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
@@ -41,13 +58,18 @@
                         <Image url="@../assets/logo/icons8-camera-48.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="385.0" layoutY="17.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="385.0" layoutY="17.0" onMouseClicked="#handleSendImojiEvent" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/logo/icons8-emoji-66.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
+            <ScrollPane layoutX="20.0" layoutY="14.0" prefHeight="528.0" prefWidth="480.0" rotate="180.0">
+               <content>
+                  <VBox fx:id="vbox" prefHeight="76.0" prefWidth="476.0" rotate="180.0" spacing="10.0" />
+               </content>
+            </ScrollPane>
          </children>
       </Pane>
    </children>
